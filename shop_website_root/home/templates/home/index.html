@@ -57,7 +57,11 @@
         <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Aria</a> --> 
 
         <!-- Image Logo -->
-        <a class="navbar-brand logo-image" href="index.html"><img style="mirgin:0;height: 70%;width: 70%" src="{% static 'images/logo.png' %}" alt="alternative"></a>
+        <a class="navbar-brand logo-image" href="index.html">
+            <img src="{% static 'images/logo.svg' %}" alt="alternative">
+            <b style="color: white;">Abhsihek Computers</b>
+            
+        </a>
         
         <!-- Mobile Menu Toggle Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -78,7 +82,7 @@
                     <a class="nav-link page-scroll" href="#services">SERVICES</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#callMe">CALL ME</a>
+                    <a class="nav-link page-scroll" href="#callMe">REPAIR COMPUTER ??</a>
                 </li>
 
                 <!-- Dropdown Menu -->          
@@ -127,6 +131,8 @@
                 <div class="col-lg-5">
                     <div class="text-container">
                         <div class="section-title">INTRO</div>
+                        <h1>FORM IS HERE</h1>
+                        {{ form.name }}
                         <h2>We Offer Some Of The Best Business Growth Services In Town</h2>
                         <p>Launching a new company or developing the market position of an existing one can be quite an overwhelming processs at times.</p>
                         <p class="testimonial-text">"Our mission here at Aira is to get you through those tough moments relying on our team's expertise in starting and growing companies."</p>
@@ -580,7 +586,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="text-container">
-                        <div class="section-title">CALL ME</div>
+                        <div class="section-title">REPAIR COMPUTER ??</div>
                         <h2 class="white">Have Us Contact You By Filling And Submitting The Form</h2>
                         <p class="white">You are just a few steps away from a personalized offer. Just fill in the form and send it to us and we'll get right back with a call to help you decide what service package works.</p>
                         <ul class="list-unstyled li-space-lg white">
@@ -632,7 +638,7 @@
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="form-control-submit-button">CALL ME</button>
+                            <button type="submit" class="form-control-submit-button">SUBMIT YOU PROBLEM</button>
                         </div>
                         <div class="form-message">
                             <div id="lmsgSubmit" class="h3 text-center hidden"></div>

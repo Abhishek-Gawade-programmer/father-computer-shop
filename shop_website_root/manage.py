@@ -17,11 +17,12 @@ def main():
         ) from exc
     execute_from_command_line(sys.argv)
 '''
-virtualenv shop_website_env/
+virtualenv ../shop_website_env/
 
-source shop_website_env/Scripts/activate
+source ../shop_website_env/Scripts/activate
+cd shop_website_root
 winpty python manage.py createsuperuser
-winpty python mfdw_root/manage.py runserver
+winpty python shop_website_root/manage.py runserver
 winpty python manage.py runserver
 deactivate
 '''
