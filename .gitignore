@@ -1,0 +1,15 @@
+﻿#magration folder
+**/migrations/
+
+
+# DJANGO LOGS
+shop_website_env/
+uploads/
+
+#DATABASE FILES
+db.sqlite3
+__pycache__/*
+
+
+#THE COMPLIED PYTHON
+*.pyc
