@@ -182,28 +182,28 @@
         }
     });
 
-    function lsubmitForm() {
-        // initiate variables with form content
-		var name = $("#lname").val();
-		var phone = $("#lphone").val();
-		var email = $("#lemail").val();
-		var select = $("#lselect").val();
-        var terms = $("#lterms").val();
+ //    function lsubmitForm() {
+ //        // initiate variables with form content
+	// 	var name = $("#lname").val();
+	// 	var phone = $("#lphone").val();
+	// 	var email = $("#lemail").val();
+	// 	var select = $("#lselect").val();
+ //        var terms = $("#lterms").val();
         
-        $.ajax({
-            type: "POST",
-            url: "php/callmeform-process.php",
-            data: "name=" + name + "&phone=" + phone + "&email=" + email + "&select=" + select + "&terms=" + terms, 
-            success: function(text) {
-                if (text == "success") {
-                    lformSuccess();
-                } else {
-                    lformError();
-                    lsubmitMSG(false, text);
-                }
-            }
-        });
-	}
+ //        $.ajax({
+ //            type: "POST",
+ //            url: "php/callmeform-process.php",
+ //            data: "name=" + name + "&phone=" + phone + "&email=" + email + "&select=" + select + "&terms=" + terms, 
+ //            success: function(text) {
+ //                if (text == "success") {
+ //                    lformSuccess();
+ //                } else {
+ //                    lformError();
+ //                    lsubmitMSG(false, text);
+ //                }
+ //            }
+ //        });
+	// }
 
     function lformSuccess() {
         $("#callMeForm")[0].reset();
@@ -240,33 +240,33 @@
         }
     });
 
-    function csubmitForm() {
-        // initiate variables with form content
-		var name = $("#cname").val();
-		var email = $("#cemail").val();
-        var message = $("#cmessage").val();
-        var terms = $("#cterms").val();
-        $.ajax({
-            type: "POST",
-            url: "php/contactform-process.php",
-            data: "name=" + name + "&email=" + email + "&message=" + message + "&terms=" + terms, 
-            success: function(text) {
-                if (text == "success") {
-                    cformSuccess();
-                } else {
-                    cformError();
-                    csubmitMSG(false, text);
-                }
-            }
-        });
-	}
+ //    function csubmitForm() {
+ //        // initiate variables with form content
+	// 	var name = $("#cname").val();
+	// 	var email = $("#cemail").val();
+ //        var message = $("#cmessage").val();
+ //        var terms = $("#cterms").val();
+ //        $.ajax({
+ //            type: "POST",
+ //            url: "php/contactform-process.php",
+ //            data: "name=" + name + "&email=" + email + "&message=" + message + "&terms=" + terms, 
+ //            success: function(text) {
+ //                if (text == "success") {
+ //                    cformSuccess();
+ //                } else {
+ //                    cformError();
+ //                    csubmitMSG(false, text);
+ //                }
+ //            }
+ //        });
+	// }
 
-    function cformSuccess() {
-        $("#contactForm")[0].reset();
-        csubmitMSG(true, "Message Submitted!");
-        $("input").removeClass('notEmpty'); // resets the field label after submission
-        $("textarea").removeClass('notEmpty'); // resets the field label after submission
-    }
+    // function cformSuccess() {
+    //     $("#contactForm")[0].reset();
+    //     csubmitMSG(true, "Message Submitted!");
+    //     $("input").removeClass('notEmpty'); // resets the field label after submission
+    //     $("textarea").removeClass('notEmpty'); // resets the field label after submission
+    // }
 
     function cformError() {
         $("#contactForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
@@ -297,27 +297,27 @@
         }
     });
 
-    function psubmitForm() {
-        // initiate variables with form content
-		var name = $("#pname").val();
-		var email = $("#pemail").val();
-        var select = $("#pselect").val();
-        var terms = $("#pterms").val();
+ //    function psubmitForm() {
+ //        // initiate variables with form content
+	// 	var name = $("#pname").val();
+	// 	var email = $("#pemail").val();
+ //        var select = $("#pselect").val();
+ //        var terms = $("#pterms").val();
         
-        $.ajax({
-            type: "POST",
-            url: "php/privacyform-process.php",
-            data: "name=" + name + "&email=" + email + "&select=" + select + "&terms=" + terms, 
-            success: function(text) {
-                if (text == "success") {
-                    pformSuccess();
-                } else {
-                    pformError();
-                    psubmitMSG(false, text);
-                }
-            }
-        });
-	}
+ //        $.ajax({
+ //            type: "POST",
+ //            url: "php/privacyform-process.php",
+ //            data: "name=" + name + "&email=" + email + "&select=" + select + "&terms=" + terms, 
+ //            success: function(text) {
+ //                if (text == "success") {
+ //                    pformSuccess();
+ //                } else {
+ //                    pformError();
+ //                    psubmitMSG(false, text);
+ //                }
+ //            }
+ //        });
+	// }
 
     function pformSuccess() {
         $("#privacyForm")[0].reset();

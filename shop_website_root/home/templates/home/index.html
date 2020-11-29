@@ -132,7 +132,6 @@
                     <div class="text-container">
                         <div class="section-title">INTRO</div>
                         <h1>FORM IS HERE</h1>
-                        {{ form.name }}
                         <h2>We Offer Some Of The Best Business Growth Services In Town</h2>
                         <p>Launching a new company or developing the market position of an existing one can be quite an overwhelming processs at times.</p>
                         <p class="testimonial-text">"Our mission here at Aira is to get you through those tough moments relying on our team's expertise in starting and growing companies."</p>
@@ -608,38 +607,56 @@
                 <div class="col-lg-6">
                    
                     <!-- Call Me Form -->
-                    <form id="callMeForm" data-toggle="validator" data-focus="false">
+                    <form action="" enctype="multipart/form-data" method="post" id="callMeForm" data-toggle="validator" data-focus="false" >
+                        {% csrf_token %}
                         <div class="form-group">
-                            <input type="text" class="form-control-input" id="lname" name="lname" required>
+                            {{ form.name }}
+                           
                             <label class="label-control" for="lname">Name</label>
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control-input" id="lphone" name="lphone" required>
+                            {{ form.phone }}
                             <label class="label-control" for="lphone">Phone</label>
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control-input" id="lemail" name="lemail" required>
+                            {{ form.email }}
                             <label class="label-control" for="lemail">Email</label>
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
-                            <select class="form-control-select" id="lselect" required>
-                                <option class="select-option" value="" disabled selected>Interested in...</option>
-                                <option class="select-option" value="Off The Ground">Off The Ground</option>
-                                <option class="select-option" value="Accelerated Growth">Accelerated Growth</option>
-                                <option class="select-option" value="Market Domination">Market Domination</option>
-                            </select>
+                            <span style="color: white">Title Of Problem</span>
+                            {{ form.title_of_problem }}
+
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <p>
+                                <span style="color: white">Description Of Your Problem(Option) </span>
+                            </p>
+
+                            <p>
+                            {{ form.description_of_problem }}</p>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <p>
+                                <span style="color: white">Attach Some Photo(Option)</span>     
+                            </p>
+                            
+                            <p>
+                                {{ form.repair_photos }}
+                            </p>
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group checkbox white">
                             <input type="checkbox" id="lterms" value="Agreed-to-Terms" name="lterms" required>I agree with Aria's stated <a class="white" href="privacy-policy.html">Privacy Policy</a> and <a class="white" href="terms-conditions.html">Terms & Conditions</a>
                             <div class="help-block with-errors"></div>
                         </div>
-                        <div class="form-group">
-                            <button type="submit" class="form-control-submit-button">SUBMIT YOU PROBLEM</button>
-                        </div>
+                        <!-- <div class="form-group"> -->
+                            <button type="submit" class="btn primary">SUBMIT YOU PROBLEM</button>
+                        <!-- </div> -->
                         <div class="form-message">
                             <div id="lmsgSubmit" class="h3 text-center hidden"></div>
                         </div>
