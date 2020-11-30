@@ -20,8 +20,8 @@ def main():
 virtualenv ../shop_website_env/
 
 source ../shop_website_env/Scripts/activate
-cd shop_website_root
 winpty python manage.py runserver
+cd shop_website_root
 winpty python manage.py createsuperuser
 winpty python shop_website_root/manage.py runserver
 deactivate
