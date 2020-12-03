@@ -10,6 +10,8 @@ from django.utils.html import strip_tags
 from .models import Submit_Problem
 #SMS
 from twilio.rest import Client
+import requests
+import json
 
 
 def homepage(request):
@@ -28,17 +30,36 @@ def homepage(request):
 
 			t=send_mail(subject, plain_message, from_email,to,html_message=html_message)
 
-			account_sid=settings.TWIILIO_ACCOUNT_SID
-			auth_token=settings.TWIILIO_AUTH_TOKEN
-			client=Client(account_sid,auth_token)
+			url="https://www.fast2sms.com/dev/bulk"
+			querystring = {"authorization":'FaqMoX0CGc1KSpBJztVITZbfrAj5WsyPeLEl2u6Y9NdHDxmn3wOnqrulKsoXFAWCp0gdP37SR4cTBNYe',
+					"sender_id":"FSTSMS",
+					"message":'yusefgysbdvyubnvcyun hj SMS',
+					"language":"english",
+					"route":"t",
+					"numbers":'9860390980'}
 
-			if len(str(cd.get('phone')))==10:
-				cd['phone']='+91'+str(cd['phone'])
 
-			message=client.messages.create(
-				body=f'''{username} Your Problem Has Been Recorded Your id {Submit_Problem.objects.last().id} TITLE : {cd['title_of_problem']} DESCRPTION :{cd['description_of_problem']}''',
-				from_=settings.TWIILIO_NUMBER,
-				to=cd['phone'])
+			headers = {
+			    'cache-control': "no-cache"
+			}
+
+			response = requests.get(url,params=querystring)
+			dic=response.json()
+			print(dic)
+			
+			# account_sid=str(settings.TWIILIO_ACCOUNT_SID)
+			# auth_token=str(settings.TWIILIO_AUTH_TOKEN)
+			# client=Client(account_sid,auth_token)
+
+			# if len(str(cd.get('phone')))==10:
+			# 	cd['phone']='+91'+str(cd['phone'])
+
+			# message=client.messages.create(
+			# 	body=f'''{username} Your Problem Has Been Recorded Your id {Submit_Problem.objects.last().id} 
+			# 		TITLE : {cd['title_of_problem']} 
+			# 		DESCRPTION :{cd['description_of_problem']}''',
+			# 	from_=str(settings.TWIILIO_NUMBER),
+			# 	to=cd['phone'])
 			
 
 
@@ -48,4 +69,7 @@ def homepage(request):
 		form = Submit_Problem_Form()
 
 	return render(request,'home/index.html',{'form':form})
+
+
+
 
