@@ -1,2 +1,49 @@
-<title>404 ERROR ( PAGE NOT FOUND </title>
-<h1>krehgubk skejhj 40404 dfknkldbfikdldfikln</h1>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<title>ABHISHEK COMPUTER SEVICES</title>
+	<link rel="icon" href="{% static 'images/favicon.png' %}">
+	<!-- Bootstrap Core CSS -->
+	<link href="{% static '404/css/bootstrap.css' %}" rel="stylesheet">
+
+	<!-- Theme CSS -->
+	<link href="{% static '404/css/style.css' %}" rel="stylesheet">
+
+	<!-- Custom Fonts -->
+	<!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet"> -->
+    
+
+
+</head>
+
+<body>
+
+	<div class="container text-center">
+		<div class="brand">
+			<h3 class="text-uppercase">ABHISHEK COMPUTER SEVICES</h3>
+		</div>
+		<h1 class="head"><span>404</span></h1>
+		<p>Oops! The Page you requested was not found!</p>
+		<a href="{% url 'home-page' %}" class="btn-outline"> Back to Home</a>
+	</div>
+
+   <div class="bwt-footer-copyright">
+	<div class="container">
+	  <div class="row">
+
+      </div>
+	</div>
+   </div>
+
+    <!-- jQuery -->
+    <script src="{% static '404/js/jquery.min.js' %}"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static '404/js/bootstrap.min.js' %}"></script>
+    <!-- Theme JavaScript -->
+    <script src="{% static '404/js/script.js' %}"></script>
+
+</body>
+</html>	

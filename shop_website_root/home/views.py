@@ -9,7 +9,6 @@ from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from .models import Submit_Problem
 #SMS
-from twilio.rest import Client
 import requests
 import json
 
@@ -26,27 +25,9 @@ def homepage(request):
 			html_message = render_to_string('email_template.html', {'cd': cd})
 			plain_message = strip_tags(html_message)
 			from_email = settings.EMAIL_HOST_USER
-			to = [cd.get('email'),]#gmail.hotmail
+			to = [cd.get('email'),'sanjaygawade29285@gmail.com','sanjay_gawde@hotmail.com']
 
 			t=send_mail(subject, plain_message, from_email,to,html_message=html_message)
-
-			
-			# account_sid=str(settings.TWIILIO_ACCOUNT_SID)
-			# auth_token=str(settings.TWIILIO_AUTH_TOKEN)
-			# client=Client(account_sid,auth_token)
-
-			# if len(str(cd.get('phone')))==10:
-			# 	cd['phone']='+91'+str(cd['phone'])
-
-			# message=client.messages.create(
-			# 	body=f'''{username} Your Problem Has Been Recorded Your id {Submit_Problem.objects.last().id} 
-			# 		TITLE : {cd['title_of_problem']} 
-			# 		DESCRPTION :{cd['description_of_problem']}''',
-			# 	from_=str(settings.TWIILIO_NUMBER),
-			# 	to=cd['phone'])
-			
-
-
 
 			messages.success(request, f"<b>{username} </b> Problem Has Been Submitted Check Your Email We have sent You Your Problem's Copy We Wil Reach You Soon ")
 	else:
