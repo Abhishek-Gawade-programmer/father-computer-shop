@@ -5,7 +5,7 @@
 -  Send Email To Repair Your **Computer/Laptop**
 -  Contact us **Form** in _Website_
 -  See What **Services We Offer**
--  You can see the **computer** that you want with its **specification** 
+-  You can see the **computer** that you want Buy with its **specification** 
 - Can Call Us Directly for any **queries**
 ---
 ## This Website is made by _Abhishek Gawade_ by 
