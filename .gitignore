@@ -2,9 +2,10 @@
 **/migrations/
 
 
-# DJANGO LOGS
+# DJANGO LOGS   
 shop_website_env/
 uploads/
+static/
 
 #DATABASE FILES
 db.sqlite3
