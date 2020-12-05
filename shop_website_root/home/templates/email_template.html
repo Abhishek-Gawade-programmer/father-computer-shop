@@ -1,17 +1,16 @@
+{% load static %}
+<!-- CSS -->
 <h1 style="color: deeppink">{{ cd.title_of_problem }}</h1>
 <br>
 <h3>By: <b>{{ cd.name }}<b>({{ cd.phone }})</h3>
 <hr/>
 {% if cd.description_of_problem %}
-<p style="border: solid 2px; padding: 20px;border-radius: 10px">
-	{{cd.description_of_problem}}
+	<p style="border: solid 2px; padding: 20px;border-radius: 10px">
+		{{cd.description_of_problem}}
 
-</p>
+	</p>
 {% endif %}
 <h3>Contact Costumer :: {{ cd.email }} </h3>
-<h1>{{ cd.repair_photos }}</h1>
-
-
 
 
 

@@ -19,7 +19,6 @@ def main():
     
 '''
 virtualenv ../shop_website_env/
-
 source ../shop_website_env/Scripts/activate
 winpty python manage.py runserver
 cd shop_website_root

@@ -26,26 +26,10 @@ def homepage(request):
 			html_message = render_to_string('email_template.html', {'cd': cd})
 			plain_message = strip_tags(html_message)
 			from_email = settings.EMAIL_HOST_USER
-			to = [cd.get('email'),]
+			to = [cd.get('email'),]#gmail.hotmail
 
 			t=send_mail(subject, plain_message, from_email,to,html_message=html_message)
 
-			url="https://www.fast2sms.com/dev/bulk"
-			querystring = {"authorization":'FaqMoX0CGc1KSpBJztVITZbfrAj5WsyPeLEl2u6Y9NdHDxmn3wOnqrulKsoXFAWCp0gdP37SR4cTBNYe',
-					"sender_id":"FSTSMS",
-					"message":'yusefgysbdvyubnvcyun hj SMS',
-					"language":"english",
-					"route":"t",
-					"numbers":'9860390980'}
-
-
-			headers = {
-			    'cache-control': "no-cache"
-			}
-
-			response = requests.get(url,params=querystring)
-			dic=response.json()
-			print(dic)
 			
 			# account_sid=str(settings.TWIILIO_ACCOUNT_SID)
 			# auth_token=str(settings.TWIILIO_AUTH_TOKEN)
@@ -64,7 +48,7 @@ def homepage(request):
 
 
 
-			messages.success(request, f"Your Problem Has Been Submitted: <b>{username} </b>")
+			messages.success(request, f"<b>{username} </b> Problem Has Been Submitted Check Your Email We have sent You Your Problem's Copy We Wil Reach You Soon ")
 	else:
 		form = Submit_Problem_Form()
 
