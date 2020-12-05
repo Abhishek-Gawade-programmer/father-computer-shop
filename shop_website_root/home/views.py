@@ -8,10 +8,6 @@ from django.conf import settings
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from .models import Submit_Problem
-#SMS
-import requests
-import json
-
 
 def homepage(request):
 	if request.method=='POST':
@@ -29,7 +25,7 @@ def homepage(request):
 
 			t=send_mail(subject, plain_message, from_email,to,html_message=html_message)
 
-			messages.success(request, f"<b>{username} </b> Problem Has Been Submitted Check Your Email We have sent You Your Problem's Copy We Wil Reach You Soon ")
+			messages.success(request, f"<b>{username} </b> Your Problem Has Been Submitted Check Your Email We have sent You Your Problem's Copy We Wil Reach You Soon ")
 	else:
 		form = Submit_Problem_Form()
 
